@@ -1,8 +1,8 @@
 # Pioneer As-1 SYSEX
 
-## SysEx data sent by the Bass Station II
+## SysEx data sent by the Pioneer Toraiz AS-1 synthesizer
 
-By default, the Bass Station II send 154 bytes. However, a patch (.syx file) may be smaller.
+The lenght of a sysex patch dump = 
     
 - **Offset**: index from the start of the SysEx data. First byte (0xF0) has offset=0.
 - **Bytes**: number of bytes to consider for this parameter
