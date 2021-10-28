@@ -26,14 +26,14 @@ system-exclusive hex 00 00 23 01 43 55 00 00 dec
 The mirage give another response message.
 Here are the most important codes, they can be found in the soundprocess manual
 
-|response code| description|
-|00 |system ok |
-|01| no computer control, see 1. how to set the Mirage to Computer control|
-|02| undefined error |
-|03| Qualifier over range |
-|04| Qualifier under range |
-|05| DATA over range |
-|06 DATA underrange |
+| response code | description |
+| 00 | system ok |
+| 01 | no computer control, see 1. how to set the Mirage to Computer control|
+| 02 | undefined error |
+| 03 | Qualifier over range |
+| 04 | Qualifier under range |
+| 05 | DATA over range |
+| 06 DATA underrange |
 
 
 
