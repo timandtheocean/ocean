@@ -1,4 +1,4 @@
-# Sysex for the Ensoniq Mirage running Trtons Soundprocess OS
+# Sysex for the Ensoniq Mirage running Tritons Soundprocess OS
 
 The sysex patch mapping is clearly documented in the Sound Process OS manaual.
 Some data needs to be send in 2 4bit nibbles otheres don't
