@@ -3,7 +3,7 @@
 The sysex patch mapping is clearly documented in the Sound Process OS manaual.
 Some data needs to be send in 2 4bit nibbles otheres don't
 
-We use Sendmidi and RecieveMIDI to communincate with the synth
+We use Sendmidi and RecieveMIDI to communincate with the synth, available for all platforms
 https://github.com/gbevin/SendMIDI
 https://github.com/gbevin/ReceiveMIDI
 
@@ -14,6 +14,7 @@ F0 00 00 23 01 02 F7
 ```
 
 parameter request message for parameter hex:55 decimal 85, Filter Frequency
+
 ```
 .\sendmidi.exe dev "Electra Controller" hex syx 00 00 23 01 03 55
 ```
@@ -29,13 +30,12 @@ Here are the most important codes, they can be found in the soundprocess manual
 | response code | description |
 | ------:| -----:| 
 | 00 | system ok |
-| 01 | no computer control, see 1. how to set the Mirage to Computer control|
+| 01 | no computer control|
 | 02 | undefined error |
 | 03 | Qualifier over range |
 | 04 | Qualifier under range |
 | 05 | DATA over range |
 | 06 | DATA underrange |
-
 
 
 Sysex Patch Map and control ID
