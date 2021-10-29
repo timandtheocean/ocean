@@ -138,13 +138,14 @@ The second is a bogus one but like this its easier to see how to add more.
 Then send it to the electra one using Google Chrome [[https://app.electra.one/sandbox/]]
 After testing close the sandbox tab in chrome so the driver is released and ```RecieveMIDI``` can be started again to capture more bits and bytes.
 
-| attribute	| function | notes |
-| type	        | type of parameter | |
-| parameterNumber |	id of parameter | |
-| parameterBitPosition	| bit position within the parameter | |
-| byte	| position of the byte in the SysEx message | byte 0 is the first one after the header bytes | |
+| attribute | function | notes |
+|----------:|---------:|-------:|
+| type | type of parameter | |
+| parameterNumber | id of parameter | |
+| parameterBitPosition | bit position within the parameter | |
+| byte | position of the byte in the SysEx message | byte 0 is the first one after the header bytes | |
 | byteBitPosition | bit position within the SysEx byte | |
-| bitWidth	| number of bits to be used | |
+| bitWidth | number of bits to be used | |
 
 
  
