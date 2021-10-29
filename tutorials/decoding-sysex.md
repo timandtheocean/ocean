@@ -66,6 +66,8 @@ You either copy the HEX data without the header to the MidiDumpCompare tool or y
 
 10. We now twist a know on the AS-1, Oscillator 2, Keyfollow from ON, to OFF, a simple boolian.
 11. Send another patch request and paste the data in the MidiDumpCompare tool. Hit compare:
+**Be carefull no remove trailing white spaces from the data** otherwise all bytes will mismatch. 
+**Byte 0 is not detected properly in my case**
 
 ![image](https://user-images.githubusercontent.com/93200656/139408792-746c5e2f-5b4f-4f4e-8263-add56daea82c.png)
 
