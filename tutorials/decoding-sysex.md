@@ -81,6 +81,58 @@ You can open your template on [[app.electra.one]] and you can see the parameterN
 14. next we need to setup the patch section in our template. This can only be done directly in the json.
 When you download your latest templates ```.epr``` file you can use online tools to pretty print the json data. Coppy all json data here: [[https://jsonformatter.curiousconcept.com/]] and copy it back to your template. It will make it easier to work with JSON.
 
+15. In detail howto add the patch request / reponse: https://docs.electra.one/developers/sysexparser.html
+But lets continue.  
+We got the patch **request** message, the **header**, static bytes in the beginning of the patch. which never not change, the byte location of our parameter. and **parameterNumber** and **type** in our template.
+Our template uses **"type":"nrpn"** set it to whatever midi message you send to control your synth ( perhaps **sysex**, **cc7** or **cc14** )
+
+**"bitWidth":7** will work but we use only 1 bit so **"bitWidth":1** will also work for this case.
+In our case it is not important as byte 14 is only used for 1 parameter which has a 1 bit range.
+
+See here the patch section with 2 parameter in the rules.
+The second is a bogus one but like this its easier to see how to add more. 
+
+```json
+"devices":[
+      {
+         "id":1,
+         "name":"Pioneer Toraiz AS-1",
+         "instrumentId":"toraizas1",
+         "port":1,
+         "channel":3,
+         "patch":[
+            {
+               "request":[ "00", "40", "05", "00", "00", "01", "08", "10", "06" ],
+               "responses":[
+                  {
+                     "header":[ "00", "40", "05", "00", "00", "01", "08", "10", "03" ],
+                     "rules":[
+			                     {
+                           "type":"nrpn",
+                           "parameterNumber":11,
+                           "parameterBitPosition":0,
+                           "byte":14,
+                           "byteBitPosition":0,
+                           "bitWidth":7
+                        },
+                        {
+                           "type":"nrpn",
+                           "parameterNumber":666,
+                           "parameterBitPosition":0,
+                           "byte":66,
+                           "byteBitPosition":0,
+                           "bitWidth":6
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+
+16. when we have updated our template. on windows stop ```RecieveMIDI``` as the driver is not multi client. Then send it to the electra one using Google Chrome [[https://app.electra.one/sandbox/]]
+After testing close the sandbox tab in chrome so the driver is released and ```RecieveMIDI``` can be started again to capture more bits and bytes.
 
 
 
