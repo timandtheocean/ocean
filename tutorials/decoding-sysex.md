@@ -9,7 +9,7 @@ We use Sendmidi and RecieveMIDI to communincate with the synth, available for al
 - https://github.com/gbevin/ReceiveMIDI
 - https://www.urbanspaceman.net/shared/MidiDumpCompare.htm.zip
 
-*You can also use MidiOX on windows, this also has a compare function. 
+*You can also use MidiOX on windows, this also has a compare function or whatever works for you. 
 
 ## Required info
 - Manual of the synth ( sometimes there is a seperate sysex manual )
