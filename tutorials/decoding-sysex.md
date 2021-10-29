@@ -25,7 +25,8 @@ We use Sendmidi and RecieveMIDI to communincate with the synth, available for al
 7. open the '''MidiDumpCompare.htm''' in Google chrome
 8. If all is setup correctly we should have recieved a patch dump which looks something like this:
 
-```system-exclusive hex 00 40 05 00 00 01 08 10 03 00 18 18 7F 7F 7F 7F 7F 00 7F 00 00 00 00 01 00 20 46 00 00 07 00 04 00 00 00
+```  
+system-exclusive hex 00 40 05 00 00 01 08 10 03 00 18 18 7F 7F 7F 7F 7F 00 7F 00 00 00 00 01 00 20 46 00 00 07 00 04 00 00 00
 00 00 00 00 00 7F 00 00 7F 7F 7F 7F 7F 00 00 00 00 00 00 00 7F 00 00 28 00 00 00 00 00 40 00 40 64 0A 64 40 00 00 08 03 03 00
 06 0B 00 00 00 00 01 00 00 00 00 00 00 7F 00 00 00 00 00 00 00 7F 7F 00 00 00 00 00 00 00 00 00 78 00 02 00 00 00 06 00 00 07
 00 7F 00 7F 7F 7F 7F 7F 7F 00 00 06 00 42 61 73 69 63 00 20 50 72 6F 67 72 61 00 6D 20 20 20 20 20 20 30 20 64 3C 40 7F 7F 3C
@@ -53,7 +54,8 @@ We use Sendmidi and RecieveMIDI to communincate with the synth, available for al
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 dec```
+00 00 00 00 00 00 00 00 00 00 00 dec
+```
 
 If you did not recieve anything check the manual of your synth. Sometime sysex, or other midimessages need to be enabled specificly.
 In case of the Toraiz is connected it via USB and needed to set usb as "sysex cable".
@@ -68,6 +70,17 @@ You either copy the HEX data without the header to the MidiDumpCompare tool or y
 ![image](https://user-images.githubusercontent.com/93200656/139408792-746c5e2f-5b4f-4f4e-8263-add56daea82c.png)
 
 12. You see that **byte 14** is different it was **00** and is now **01** 
+Oscillator 2, Keyfollow from ON = **00** hex, to OFF **01** hex
+13.  In our template we need to know the parameterNumber because we want to assign the value found in the sysex dump here.
+You can open your template on [[app.electra.one]] and you can see the parameterNumber there or what I did is to search ```OSC2 KEYFOLLOW``` in the ```.epr``` json template
+
+```
+"type":"nrpn",
+"parameterNumber":11,
+```
+14. next we need to setup the patch section in our template. This can only be done directly in the json.
+When you download your latest templates ```.epr``` file you can use online tools to pretty print the json data. Coppy all json data here: [[https://jsonformatter.curiousconcept.com/]] and copy it back to your template. It will make it easier to work with JSON.
+
 
 
 
