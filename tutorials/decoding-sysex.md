@@ -132,6 +132,7 @@ The second is a bogus one but like this its easier to see how to add more.
          ]
       }
    ],
+```
 
 16. when we have updated our template on windows stop ```RecieveMIDI``` as the driver is not multi client. 
 Then send it to the electra one using Google Chrome [[https://app.electra.one/sandbox/]]
