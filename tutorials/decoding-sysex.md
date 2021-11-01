@@ -14,6 +14,7 @@ We use Sendmidi and RecieveMIDI to communincate with the synth, available for al
 ## Required info
 - Manual of the synth ( sometimes there is a seperate sysex manual )
 - We need a "patch request message" when we send it to the synth it will return a patch in sysex format
+- [https://docs.electra.one/developers/sysexparser.html]
 
 ## setting up SendMIDI and RecieveMIDI
 1. download the releases for your platform and extract it
@@ -140,12 +141,12 @@ After testing close the sandbox tab in chrome so the driver is released and ```R
 
 | attribute | function | notes |
 |----------:|---------:|-------:|
-| type | type of parameter | |
-| parameterNumber | id of parameter | |
-| parameterBitPosition | bit position within the parameter | |
-| byte | position of the byte in the SysEx message | byte 0 is the first one after the header bytes | |
-| byteBitPosition | bit position within the SysEx byte | |
-| bitWidth | number of bits to be used | |
+| type | type of parameter | this is the paramater type where the value will go |
+| parameterNumber | id of parameter | can be found in the app or in your template |
+| parameterBitPosition | bit position within the parameter | counting from 0 |
+| byte | position of the byte in the SysEx message | byte 0 is the first one after the header bytes |
+| byteBitPosition | bit position within the SysEx byte | counting from 0 |
+| bitWidth | number of bits to be used | counting from 1 |
 
 
  
